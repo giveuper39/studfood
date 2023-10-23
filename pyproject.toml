@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "studfood"
+version = "0.1.0"
+description = ""
+authors = ["giveuper39 <giveuper39@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+ruff = "^0.1.1"
+mypy = "^1.6.1"
+gunicorn = "^21.2.0"
+django = "^4.2.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
