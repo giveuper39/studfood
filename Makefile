@@ -2,7 +2,7 @@ prod_run:
 	poetry run gunicorn studfood.wsgi
 
 run:
-	poetry run python manage.py runserver
+	poetry run python manage.py runserver --insecure
 
 test:
 	poetry run pytest --cov
