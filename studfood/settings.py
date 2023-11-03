@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "django_bootstrap5",
 ]
 
 MIDDLEWARE = [
@@ -130,8 +129,4 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-BOOTSTRAP5 = {
-    "css_url": os.path.join(BOOTSTRAP_DIR, "css", "bootstrap.css"),
-    "javascript_url": os.path.join(BOOTSTRAP_DIR, "js", "bootstrap.js"),
-    "theme_url": os.path.join(BOOTSTRAP_DIR, "css", "bootstrap.css"),
-}
+
