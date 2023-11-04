@@ -37,47 +37,41 @@
 </head>
 <body>
 
+<div class="hero_area bg-box">
 
-<div class="hero_area">
-    <div class="bg-box">
-
-    </div>
     <!-- header section strats -->
     <header class="header_section">
         <div class="container">
             <nav class="navbar navbar-expand-lg custom_nav-container ">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="{% url "index" %}">
             <span>
               StudFood
             </span>
                 </a>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class=""> </span>
-                </button>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav  mx-auto ">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html">На главную<span class="sr-only">(current)</span></a>
+                        {% url "index" as url %}
+                        <li class="nav-item {% if request.path == url %} active {% endif %}">
+                            <a class="nav-link" href="{% url "index" %}">На главную</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../static/bootstrap/menu.html">Рецепты</a>
+                        {% url "catalogue" as url %}
+                        <li class="nav-item {% if request.path == url %} active {% endif %}">
+                            <a class="nav-link" href="{% url "catalogue" %}">Рецепты</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../static/bootstrap/about.html">Генератор рациона</a>
+                        {% url "generator" as url %}
+                        <li class="nav-item {% if request.path == url %} active {% endif %}">
+                            <a class="nav-link" href="{% url "generator" %}">Генератор рациона</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../static/bootstrap/book.html">О нас</a>
+                        {% url "about" as url %}
+                        <li class=" nav-item {% if request.path == url %} active {% endif %}">
+                            <a class="nav-link" href="{% url "about" %}">О нас</a>
                         </li>
                     </ul>
                     <div class="user_option">
-                        <a class="fav_link" href="#">
+                        <a class="fav_link" href="">
                             <i class="fa fa-heart" aria-hidden="true"></i>
                         </a>
-                        <a href="" class="order_online">
+                        <a href="{% url "login" %}" class="order_online">
                             Войти
                         </a>
                     </div>
@@ -85,85 +79,54 @@
             </nav>
         </div>
     </header>
+    {% block content %}
+    {% endblock %}
 </div>
-{% block content %}
-{% endblock %}
+
+
 <footer class="footer_section">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 footer-col">
+            <div class="col-sm-4 footer-col">
                 <div class="footer_contact">
                     <h4>
-                        Contact Us
+                        Связаться с нами
                     </h4>
                     <div class="contact_link_box">
                         <a href="">
-                            <i class="fa fa-map-marker" aria-hidden="true"></i>
-                            <span>
-                  Location
-                </span>
-                        </a>
-                        <a href="">
                             <i class="fa fa-phone" aria-hidden="true"></i>
                             <span>
-                  Call +01 1234567890
-                </span>
+                                    Звоните 8 (800) 555 35-35
+                                </span>
                         </a>
                         <a href="">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                             <span>
-                  demo@gmail.com
-                </span>
+                                st107938@student.spbu.ru
+                            </span>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 footer-col">
+            <div class="col-sm-4 footer-col">
                 <div class="footer_detail">
                     <a href="" class="footer-logo">
-                        Feane
+                        StudFood
                     </a>
-                    <p>
-                        Necessary, making this the first true generator on the Internet. It uses a dictionary of over
-                        200 Latin words, combined with
-                    </p>
                     <div class="footer_social">
-                        <a href="">
-                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        <a href="https://vk.com/giveuper">
+                            <img src="{% static "images/VK Logo.svg" %}" alt="VK" height="20" width="20">
                         </a>
                         <a href="">
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                        </a>
-                        <a href="">
-                            <i class="fa fa-linkedin" aria-hidden="true"></i>
-                        </a>
-                        <a href="">
-                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                        </a>
-                        <a href="">
-                            <i class="fa fa-pinterest" aria-hidden="true"></i>
+                            <i class="fa fa-github"></i>
                         </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 footer-col">
-                <h4>
-                    Opening Hours
-                </h4>
-                <p>
-                    Everyday
-                </p>
-                <p>
-                    10.00 Am -10.00 Pm
-                </p>
             </div>
         </div>
         <div class="footer-info">
             <p>
-                &copy; <span id="displayYear"></span> All Rights Reserved By
-                <a href="https://html.design/">Free Html Templates</a><br><br>
-                &copy; <span id="displayYear"></span> Distributed By
-                <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+                &copy; <span id="displayYear"></span> All Rights Reserved By Giveuper (me)
             </p>
         </div>
     </div>
@@ -184,9 +147,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
 <!-- custom js -->
 <script src="{% static "bootstrap/js/custom.js" %}"></script>
-<!-- Google Map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-</script>
-<!-- End Google Map -->
 </body>
 </html>
