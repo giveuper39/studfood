@@ -1,7 +1,8 @@
 $white: #ffffff;
 $black: #000000;
-$primary1: #ffbe33;
+$primary1: #88cf7d;
 $primary2: #222831;
+$bg2: #ffdb95;
 $textCol: #1f1f1f;
 
 // import fonts -  font-family: 'Open Sans', sans-serif and  font-family: 'Dancing Script', cursive;
@@ -129,12 +130,7 @@ a:focus {
   left: 0;
   width: 100%;
   height: 100%;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  background: linear-gradient(294deg, $primary1 0%, $bg2 100%)
 }
 
 .sub_page {
@@ -148,12 +144,6 @@ a:focus {
       width: 100%;
       height: 100%;
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: right top;
-      }
     }
   }
 
@@ -174,7 +164,7 @@ a:focus {
   span {
     font-weight: bold;
     font-size: 32px;
-    color: $white;
+    color: $black;
   }
 }
 
@@ -187,7 +177,7 @@ a:focus {
     .nav-item {
       .nav-link {
         padding: 5px 20px;
-        color: $white;
+        color: $black;
         text-align: center;
         text-transform: uppercase;
         border-radius: 5px;
@@ -224,9 +214,16 @@ a:focus {
   a {
     margin: 0 10px;
   }
+  .fav_link {
+    color: red;
+    &:hover {
+      color: $primary1;
+    }
+  }
 
   .user_link {
     color: $white;
+
 
 
     &:hover {
@@ -256,7 +253,7 @@ a:focus {
   }
 
   .order_online {
-    @include hero_btn($primary1, $white, 8px, 30px, 45px);
+    @include hero_btn($primary1, $black, 8px, 30px, 45px);
   }
 }
 
@@ -408,7 +405,7 @@ a:focus {
       height: 175px;
       margin-right: 15px;
       position: relative;
-      transition: all .1.5s;
+      transition: all .15s;
       border-radius: 100%;
       border: 5px solid $primary1;
       overflow: hidden;
