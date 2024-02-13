@@ -3,151 +3,127 @@
 {% block title %} Вход {% endblock %}
 
 {% block content %}
-    <!-- Pills navs -->
-    <div class="row justify-content-center align-items-center h-100">
-        <div class="col-md-4">
-            <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
-                       aria-controls="pills-login" aria-selected="true">Login</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab"
-                       aria-controls="pills-register" aria-selected="false">Register</a>
-                </li>
-            </ul>
-            <!-- Pills navs -->
-
-            <!-- Pills content -->
-            <div class="tab-content">
-                <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-                    <form>
-                        <div class="text-center mb-3">
-                            <p>Sign in with:</p>
-                            <button type="button" class="btn btn-link btn-floating mx-1">
-                                <i class="fab fa-facebook"></i>
-                            </button>
-
-                            <button type="button" class="btn btn-link btn-floating mx-1">
-                                <i class="fab fa-google"></i>
-                            </button>
-
-                            <button type="button" class="reg-btn btn btn-link btn-floating mx-1">
-                                <i class="fab fa-twitter"></i>
-                            </button>
-
-                            <button type="button" class="btn btn-link btn-floating mx-1">
-                                <i class="fab fa-github"></i>
-                            </button>
-                        </div>
-
-                        <p class="text-center">or:</p>
-
-                        <!-- Email input -->
-                        <div class="form-outline mb-4">
-                            <input type="email" id="loginName" class="form-control"/>
-                            <label class="form-label" for="loginName">Email or username</label>
-                        </div>
-
-                        <!-- Password input -->
-                        <div class="form-outline mb-4">
-                            <input type="password" id="loginPassword" class="form-control"/>
-                            <label class="form-label" for="loginPassword">Password</label>
-                        </div>
-
-                        <!-- 2 column grid layout -->
-                        <div class="row mb-4">
-                            <div class="col-md-6 d-flex justify-content-center">
-                                <!-- Checkbox -->
-                                <div class="form-check mb-3 mb-md-0">
-                                    <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked/>
-                                    <label class="form-check-label" for="loginCheck"> Remember me </label>
+    <section class="d-xl-flex py-5">
+        <div class="container py-5">
+            <div>
+                <ul class="nav nav-tabs text-start justify-content-center" role="tablist"
+                    style="position: relative;display: flex;">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab"
+                                                                href="#tab-1"
+                                                                style="background: transparent;font-family: 'Open Sans', sans-serif;border-color: white;">Вход</a>
+                    </li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab"
+                                                                href="#tab-2"
+                                                                style="background: transparent;font-family: 'Open Sans', sans-serif;border-color: white;">Регистрация</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" role="tabpanel" id="tab-1">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-6 col-xl-4">
+                                <div class="card" style="background: transparent;">
+                                    <div class="card-body text-center d-flex flex-column align-items-center"
+                                         style="background: transparent;">
+                                        <div class="bs-icon-xl bs-icon-circle bs-icon-primary shadow bs-icon my-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                                 fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
+                                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"></path>
+                                            </svg>
+                                        </div>
+                                        <form method="post" data-bs-theme="light">
+                                            {% csrf_token %}
+                                            <div class="mb-3"><input class="form-control" type="email" name="email"
+                                                                     placeholder="Электронная почта"></div>
+                                            <div class="mb-3"><input class="form-control" type="password"
+                                                                     name="password" placeholder="Пароль"></div>
+                                            <div class="mb-3">
+                                                <button class="btn btn-primary shadow d-block w-100" type="submit">
+                                                    Войти
+                                                </button>
+                                            </div>
+                                        </form>
+                                        <p class="text-muted">Забыли пароль?</p>
+                                        <div class="row d-flex d-xxl-flex flex-grow-0 justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center">
+                                            <div class="col-5 d-inline-flex flex-row flex-grow-0 flex-shrink-0 align-content-center justify-content-xxl-center align-items-xxl-center">
+                                                <p class="text-center d-inline-flex d-xxl-flex flex-shrink-1 flex-fill justify-content-center align-items-center align-content-center align-self-center flex-nowrap order-1 my-auto justify-content-xxl-center align-items-xxl-center"
+                                                   style="font-family: 'Open Sans', sans-serif;color: var(--bs-secondary-color);">
+                                                    Вход через сервисы</p>
+                                            </div>
+                                            <div class="col">
+                                                <ul class="list-group list-group-horizontal text-center d-inline-flex float-none justify-content-center"
+                                                    style="border-style: none;">
+                                                    <li class="list-group-item"
+                                                        style="border-style: none;background: transparent;"><a href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                                             fill="currentColor" viewBox="0 0 16 16"
+                                                             class="bi bi-github" style="font-size: 30px;">
+                                                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                                                        </svg>
+                                                    </a></li>
+                                                    <li class="list-group-item"
+                                                        style="border-style: none;background: transparent;"><a href="#"><i
+                                                            class="fab fa-vk" style="font-size: 30px;"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="col-md-6 d-flex justify-content-center">
-                                <!-- Simple link -->
-                                <a href="#!">Forgot password?</a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" role="tabpanel" id="tab-2">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-6 col-xl-4">
+                                <div class="card" style="background: transparent;">
+                                    <div class="card-body text-center d-flex flex-column align-items-center"
+                                         style="background: transparent;">
+                                        <div class="bs-icon-xl bs-icon-circle bs-icon-primary shadow bs-icon my-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                                 fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
+                                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"></path>
+                                            </svg>
+                                        </div>
+                                        <form method="post" data-bs-theme="light">
+                                            {% csrf_token %}
+                                            <div class="mb-3"> {{ reg_form.email }} </div>
+                                            <div class="mb-3"> {{ reg_form.password1 }} </div>
+                                            <div class="mb-3"> {{ reg_form.password2 }} </div>
+                                            <div class="mb-3">
+                                                <button class="btn btn-primary shadow d-block w-100" type="submit">
+                                                    Регистрация
+                                                </button>
+                                            </div>
+                                        </form>
+                                        <div class="row d-flex d-xxl-flex flex-grow-0 justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center">
+                                            <div class="col-5 d-inline-flex flex-row flex-grow-0 flex-shrink-0 align-content-center justify-content-xxl-center align-items-xxl-center">
+                                                <p class="text-center d-inline-flex d-xxl-flex flex-shrink-1 flex-fill justify-content-center align-items-center align-content-center align-self-center flex-nowrap order-1 my-auto justify-content-xxl-center align-items-xxl-center"
+                                                   style="font-family: 'Open Sans', sans-serif;color: var(--bs-secondary-color);">
+                                                    Регистрация через сервисы</p>
+                                            </div>
+                                            <div class="col">
+                                                <ul class="list-group list-group-horizontal text-center d-inline-flex float-none justify-content-center"
+                                                    style="border-style: none;">
+                                                    <li class="list-group-item"
+                                                        style="border-style: none;background: transparent;"><a href="#">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                                             fill="currentColor" viewBox="0 0 16 16"
+                                                             class="bi bi-github" style="font-size: 30px;">
+                                                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                                                        </svg>
+                                                    </a></li>
+                                                    <li class="list-group-item"
+                                                        style="border-style: none;background: transparent;"><a href="#"><i
+                                                            class="fab fa-vk" style="font-size: 30px;"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <!-- Submit button -->
-                        <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
-
-                        <!-- Register buttons -->
-                        <div class="text-center">
-                            <p>Not a member? <a href="#!">Register</a></p>
-                        </div>
-                    </form>
-                </div>
-                <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-                    <form>
-                        <div class="text-center mb-3">
-                            <p>Sign up with:</p>
-                            <button type="button" class="btn btn-link btn-floating mx-1">
-                                <i class="fab fa-facebook-f"></i>
-                            </button>
-
-                            <button type="button" class="btn btn-link btn-floating mx-1">
-                                <i class="fab fa-google"></i>
-                            </button>
-
-                            <button type="button" class="btn btn-link btn-floating mx-1">
-                                <i class="fab fa-twitter"></i>
-                            </button>
-
-                            <button type="button" class="btn btn-link btn-floating mx-1">
-                                <i class="fab fa-github"></i>
-                            </button>
-                        </div>
-
-                        <p class="text-center">or:</p>
-
-                        <!-- Name input -->
-                        <div class="form-outline mb-4">
-                            <input type="text" id="registerName" class="form-control"/>
-                            <label class="form-label" for="registerName">Name</label>
-                        </div>
-
-                        <!-- Username input -->
-                        <div class="form-outline mb-4">
-                            <input type="text" id="registerUsername" class="form-control"/>
-                            <label class="form-label" for="registerUsername">Username</label>
-                        </div>
-
-                        <!-- Email input -->
-                        <div class="form-outline mb-4">
-                            <input type="email" id="registerEmail" class="form-control"/>
-                            <label class="form-label" for="registerEmail">Email</label>
-                        </div>
-
-                        <!-- Password input -->
-                        <div class="form-outline mb-4">
-                            <input type="password" id="registerPassword" class="form-control"/>
-                            <label class="form-label" for="registerPassword">Password</label>
-                        </div>
-
-                        <!-- Repeat Password input -->
-                        <div class="form-outline mb-4">
-                            <input type="password" id="registerRepeatPassword" class="form-control"/>
-                            <label class="form-label" for="registerRepeatPassword">Repeat password</label>
-                        </div>
-
-                        <!-- Checkbox -->
-                        <div class="form-check d-flex justify-content-center mb-4">
-                            <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked
-                                   aria-describedby="registerCheckHelpText"/>
-                            <label class="form-check-label" for="registerCheck">
-                                I have read and agree to the terms
-                            </label>
-                        </div>
-
-                        <!-- Submit button -->
-                        <button type="submit" class="btn btn-primary btn-block mb-3">Sign in</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Pills content -->
+    </section>
 {% endblock %}

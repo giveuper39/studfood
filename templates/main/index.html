@@ -1,8 +1,25 @@
 {% extends "main/base.html" %}
 {% load static %}
+{% block title %} Главная {% endblock %}
 
-{% block title %} Главная страница {% endblock %}
 {% block content %}
-
-
+    <div class="container">
+        <div class="row">
+            <div class="col d-inline-flex d-xxl-flex flex-column align-self-center justify-content-xxl-start"
+                 style="position: relative;display: block;overflow: visible;transform: translateY(0px);">
+                <h1 style="font-weight: bold;font-family: 'Open Sans', sans-serif;">Первый кулинарный веб-сайт для
+                    студентов</h1>
+                <p style="font-size: 20px;font-family: 'Open Sans', sans-serif;">Планируйте свой рацион на несколько
+                    дней вперед с помощью наших простых и экономичных кулинарных решений, созданных специально для
+                    студентов.</p>
+            </div>
+            <div class="col">
+                <picture><img
+                        class="img-fluid d-flex justify-content-center align-items-center align-content-center justify-content-xxl-center"
+                        width="512" height="768"
+                        style="background: var(--bs-primary-border-subtle);padding: 0;margin: 20px;position: relative;"
+                        src="{% static 'img/healthy-meal-prep-2022-main-low.webp' %}" loading="lazy"></picture>
+            </div>
+        </div>
+    </div>
 {% endblock %}

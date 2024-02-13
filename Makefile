@@ -12,5 +12,7 @@ lint:
 	poetry run ruff .
 
 migrate:
-	poetry run python manage.py migrate
+	poetry run python manage.py migrate main
 
+makemigrations:
+	poetry run python manage.py makemigrations main
