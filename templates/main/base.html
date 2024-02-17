@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en"
-      style="background: linear-gradient(165deg, var(--bs-primary), var(--bs-secondary)); min-height: 100%; height: 100%">
+      style="background: linear-gradient(165deg, var(--bs-primary), var(--bs-secondary)); min-height: 100%">
 
 <head>
     {% load static %}
@@ -14,9 +14,7 @@
     <link rel="stylesheet" href="{% static 'fonts/fontawesome-all.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/bs-theme-overrides.css' %}">
 </head>
-
-<body style="border-style: none;background: transparent;min-height: 100%; height: 100%">
-<div style="flex: 1; display: flex; flex-direction: column; min-height: 100%; height: 100%">
+<body style="border-style: none;background: transparent;">
 <nav class="navbar navbar-expand-md sticky-top navbar-shrink py-3 navbar-light" id="mainNav"
      style="background: transparent;position: relative;opacity: 1;backdrop-filter: opacity(0) brightness(0%) contrast(0%);--bs-body-bg: var(--bs-navbar-toggler-border-color);border-style: none;overflow: visible;display: block;">
     <div class="container"><a class="navbar-brand d-flex align-items-center" href="{% url 'index' %}"><span
@@ -55,17 +53,15 @@
         </div>
     </div>
 </nav>
-
 {% block content %}
 {% endblock %}
-
-<footer class="d-xl-flex flex-fill bg-primary-gradient"
-        style="font-family: 'Open Sans';background: transparent;color: white;margin-bottom: 12px;position: static;display: flex;overflow: visible;transform: perspective(0px);">
+<footer class="d-xl-flex flex-fill bg-primary-gradient fixed-bottom"
+        style="font-family: 'Open Sans';background: transparent;color: white;margin-bottom: 12px;position: static;display: flex;overflow: visible;transform: perspective(0px)">
     <div class="container flex-shrink-0 py-4 py-lg-5"
          style="position: relative;display: block;background: transparent;">
         <div class="row justify-content-center">
             <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
-                <h3 class="fs-6 fw-bold" style="color: var(--bs-body-color);text-align: center;">Связаться с нами</h3>
+                <h3 class="fs-6 fw-bold" style="color: var(--bs-body-color);text-align: center;">Связаться со мной</h3>
                 <ul class="list-group list-group-horizontal text-center d-inline-flex float-none justify-content-center"
                     style="border-style: none;">
                     <li class="list-group-item" style="background: transparent;border-style: none;"><a
@@ -91,13 +87,13 @@
         </div>
         <hr>
         <div class="text-muted d-flex justify-content-center align-items-center pt-3">
-            <p class="justify-content-center mb-0" style="position: relative;display: inline-flex;">Copyright © 2023
+            <p class="justify-content-center mb-0" style="position: relative;display: inline-flex;">Copyright © 2024
                 StudFood</p>
         </div>
     </div>
 </footer>
 <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/bold-and-bright.js' %}"></script>
-</div>
+
 </body>
 </html>

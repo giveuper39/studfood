@@ -8,7 +8,7 @@ class LoginForm(forms.Form):
     email = forms.CharField(widget=EmailInput(attrs={"class": "form-control", "placeholder": "Электронная почта"}),
                             max_length=100, min_length=10)
     password = forms.CharField(widget=PasswordInput(attrs={"class": "form-control", "placeholder": "Пароль"}),
-                               max_length=25, min_length=5)
+                               max_length=65, min_length=5)
 
 
 class RegisterForm(UserCreationForm):

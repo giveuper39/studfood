@@ -5,330 +5,687 @@
 {% block content %}
     <section class="py-5">
         <div class="container">
-            {% if user.is_authenticated %}
-            <div class="row">
-                <div class="col">
-                    <ul class="list-group">
-                        <li class="list-group-item" style="background: transparent;">
-                            <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start" style="padding: 0px;"><a href="#">
-                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186" height="114"></picture>
+            {% if request.user.is_authenticated %}
+                <div class="row">
+                    <div class="col">
+                        <ul class="list-group">
+                            <li class="list-group-item" style="background: transparent;">
+                                <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start"
+                                     style="padding: 0px;"><a href="#">
+                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186"
+                                                  height="114"></picture>
                                 </a>
-                                <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
-                                    <div class="d-xxl-flex justify-content-between">
-                                        <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Вторые блюда</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Индия</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Рис</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Курица</p>
-                                                </a></li>
-                                        </ul><strong class="d-xxl-flex" style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200 руб</strong>
-                                    </div><a href="#">
-                                        <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
-                                    </a><button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center" type="button" style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;"><i class="fas fa-heart" style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить из избранного</button>
+                                    <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
+                                        <div class="d-xxl-flex justify-content-between">
+                                            <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Вторые блюда</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Индия</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Рис</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Курица</p>
+                                                    </a></li>
+                                            </ul>
+                                            <strong class="d-xxl-flex"
+                                                    style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200
+                                                руб</strong>
+                                        </div>
+                                        <a href="#">
+                                            <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
+                                        </a>
+                                        <button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center"
+                                                type="button"
+                                                style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;">
+                                            <i class="fas fa-heart"
+                                               style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить
+                                            из избранного
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item" style="background: transparent;">
-                            <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start" style="padding: 0px;"><a href="#">
-                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186" height="114"></picture>
+                            </li>
+                            <li class="list-group-item" style="background: transparent;">
+                                <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start"
+                                     style="padding: 0px;"><a href="#">
+                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186"
+                                                  height="114"></picture>
                                 </a>
-                                <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
-                                    <div class="d-xxl-flex justify-content-between">
-                                        <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Вторые блюда</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Индия</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Рис</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Курица</p>
-                                                </a></li>
-                                        </ul><strong class="d-xxl-flex" style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200 руб</strong>
-                                    </div><a href="#">
-                                        <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
-                                    </a><button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center" type="button" style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;"><i class="fas fa-heart" style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить из избранного</button>
+                                    <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
+                                        <div class="d-xxl-flex justify-content-between">
+                                            <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Вторые блюда</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Индия</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Рис</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Курица</p>
+                                                    </a></li>
+                                            </ul>
+                                            <strong class="d-xxl-flex"
+                                                    style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200
+                                                руб</strong>
+                                        </div>
+                                        <a href="#">
+                                            <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
+                                        </a>
+                                        <button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center"
+                                                type="button"
+                                                style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;">
+                                            <i class="fas fa-heart"
+                                               style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить
+                                            из избранного
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item" style="background: transparent;">
-                            <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start" style="padding: 0px;"><a href="#">
-                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186" height="114"></picture>
+                            </li>
+                            <li class="list-group-item" style="background: transparent;">
+                                <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start"
+                                     style="padding: 0px;"><a href="#">
+                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186"
+                                                  height="114"></picture>
                                 </a>
-                                <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
-                                    <div class="d-xxl-flex justify-content-between">
-                                        <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Вторые блюда</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Индия</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Рис</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Курица</p>
-                                                </a></li>
-                                        </ul><strong class="d-xxl-flex" style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200 руб</strong>
-                                    </div><a href="#">
-                                        <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
-                                    </a><button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center" type="button" style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;"><i class="fas fa-heart" style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить из избранного</button>
+                                    <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
+                                        <div class="d-xxl-flex justify-content-between">
+                                            <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Вторые блюда</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Индия</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Рис</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Курица</p>
+                                                    </a></li>
+                                            </ul>
+                                            <strong class="d-xxl-flex"
+                                                    style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200
+                                                руб</strong>
+                                        </div>
+                                        <a href="#">
+                                            <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
+                                        </a>
+                                        <button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center"
+                                                type="button"
+                                                style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;">
+                                            <i class="fas fa-heart"
+                                               style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить
+                                            из избранного
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item" style="background: transparent;">
-                            <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start" style="padding: 0px;"><a href="#">
-                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186" height="114"></picture>
+                            </li>
+                            <li class="list-group-item" style="background: transparent;">
+                                <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start"
+                                     style="padding: 0px;"><a href="#">
+                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186"
+                                                  height="114"></picture>
                                 </a>
-                                <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
-                                    <div class="d-xxl-flex justify-content-between">
-                                        <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Вторые блюда</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Индия</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Рис</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Курица</p>
-                                                </a></li>
-                                        </ul><strong class="d-xxl-flex" style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200 руб</strong>
-                                    </div><a href="#">
-                                        <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
-                                    </a><button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center" type="button" style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;"><i class="fas fa-heart" style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить из избранного</button>
+                                    <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
+                                        <div class="d-xxl-flex justify-content-between">
+                                            <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Вторые блюда</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Индия</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Рис</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Курица</p>
+                                                    </a></li>
+                                            </ul>
+                                            <strong class="d-xxl-flex"
+                                                    style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200
+                                                руб</strong>
+                                        </div>
+                                        <a href="#">
+                                            <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
+                                        </a>
+                                        <button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center"
+                                                type="button"
+                                                style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;">
+                                            <i class="fas fa-heart"
+                                               style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить
+                                            из избранного
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item" style="background: transparent;">
-                            <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start" style="padding: 0px;"><a href="#">
-                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186" height="114"></picture>
+                            </li>
+                            <li class="list-group-item" style="background: transparent;">
+                                <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start"
+                                     style="padding: 0px;"><a href="#">
+                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186"
+                                                  height="114"></picture>
                                 </a>
-                                <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
-                                    <div class="d-xxl-flex justify-content-between">
-                                        <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Вторые блюда</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Индия</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Рис</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Курица</p>
-                                                </a></li>
-                                        </ul><strong class="d-xxl-flex" style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200 руб</strong>
-                                    </div><a href="#">
-                                        <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
-                                    </a><button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center" type="button" style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;"><i class="fas fa-heart" style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить из избранного</button>
+                                    <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
+                                        <div class="d-xxl-flex justify-content-between">
+                                            <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Вторые блюда</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Индия</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Рис</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Курица</p>
+                                                    </a></li>
+                                            </ul>
+                                            <strong class="d-xxl-flex"
+                                                    style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200
+                                                руб</strong>
+                                        </div>
+                                        <a href="#">
+                                            <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
+                                        </a>
+                                        <button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center"
+                                                type="button"
+                                                style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;">
+                                            <i class="fas fa-heart"
+                                               style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить
+                                            из избранного
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item" style="background: transparent;">
-                            <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start" style="padding: 0px;"><a href="#">
-                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186" height="114"></picture>
+                            </li>
+                            <li class="list-group-item" style="background: transparent;">
+                                <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start"
+                                     style="padding: 0px;"><a href="#">
+                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186"
+                                                  height="114"></picture>
                                 </a>
-                                <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
-                                    <div class="d-xxl-flex justify-content-between">
-                                        <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Вторые блюда</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Индия</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Рис</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Курица</p>
-                                                </a></li>
-                                        </ul><strong class="d-xxl-flex" style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200 руб</strong>
-                                    </div><a href="#">
-                                        <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
-                                    </a><button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center" type="button" style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;"><i class="fas fa-heart" style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить из избранного</button>
+                                    <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
+                                        <div class="d-xxl-flex justify-content-between">
+                                            <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Вторые блюда</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Индия</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Рис</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Курица</p>
+                                                    </a></li>
+                                            </ul>
+                                            <strong class="d-xxl-flex"
+                                                    style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200
+                                                руб</strong>
+                                        </div>
+                                        <a href="#">
+                                            <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
+                                        </a>
+                                        <button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center"
+                                                type="button"
+                                                style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;">
+                                            <i class="fas fa-heart"
+                                               style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить
+                                            из избранного
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="list-group">
+                            <li class="list-group-item" style="background: transparent;">
+                                <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start"
+                                     style="padding: 0px;"><a href="#">
+                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186"
+                                                  height="114"></picture>
+                                </a>
+                                    <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
+                                        <div class="d-xxl-flex justify-content-between">
+                                            <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Вторые блюда</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Индия</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Рис</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Курица</p>
+                                                    </a></li>
+                                            </ul>
+                                            <strong class="d-xxl-flex"
+                                                    style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200
+                                                руб</strong>
+                                        </div>
+                                        <a href="#">
+                                            <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
+                                        </a>
+                                        <button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center"
+                                                type="button"
+                                                style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;">
+                                            <i class="fas fa-heart"
+                                               style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить
+                                            из избранного
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item" style="background: transparent;">
+                                <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start"
+                                     style="padding: 0px;"><a href="#">
+                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186"
+                                                  height="114"></picture>
+                                </a>
+                                    <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
+                                        <div class="d-xxl-flex justify-content-between">
+                                            <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Вторые блюда</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Индия</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Рис</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Курица</p>
+                                                    </a></li>
+                                            </ul>
+                                            <strong class="d-xxl-flex"
+                                                    style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200
+                                                руб</strong>
+                                        </div>
+                                        <a href="#">
+                                            <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
+                                        </a>
+                                        <button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center"
+                                                type="button"
+                                                style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;">
+                                            <i class="fas fa-heart"
+                                               style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить
+                                            из избранного
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item" style="background: transparent;">
+                                <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start"
+                                     style="padding: 0px;"><a href="#">
+                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186"
+                                                  height="114"></picture>
+                                </a>
+                                    <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
+                                        <div class="d-xxl-flex justify-content-between">
+                                            <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Вторые блюда</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Индия</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Рис</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Курица</p>
+                                                    </a></li>
+                                            </ul>
+                                            <strong class="d-xxl-flex"
+                                                    style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200
+                                                руб</strong>
+                                        </div>
+                                        <a href="#">
+                                            <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
+                                        </a>
+                                        <button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center"
+                                                type="button"
+                                                style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;">
+                                            <i class="fas fa-heart"
+                                               style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить
+                                            из избранного
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item" style="background: transparent;">
+                                <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start"
+                                     style="padding: 0px;"><a href="#">
+                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186"
+                                                  height="114"></picture>
+                                </a>
+                                    <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
+                                        <div class="d-xxl-flex justify-content-between">
+                                            <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Вторые блюда</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Индия</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Рис</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Курица</p>
+                                                    </a></li>
+                                            </ul>
+                                            <strong class="d-xxl-flex"
+                                                    style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200
+                                                руб</strong>
+                                        </div>
+                                        <a href="#">
+                                            <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
+                                        </a>
+                                        <button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center"
+                                                type="button"
+                                                style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;">
+                                            <i class="fas fa-heart"
+                                               style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить
+                                            из избранного
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item" style="background: transparent;">
+                                <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start"
+                                     style="padding: 0px;"><a href="#">
+                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186"
+                                                  height="114"></picture>
+                                </a>
+                                    <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
+                                        <div class="d-xxl-flex justify-content-between">
+                                            <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Вторые блюда</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Индия</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Рис</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Курица</p>
+                                                    </a></li>
+                                            </ul>
+                                            <strong class="d-xxl-flex"
+                                                    style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200
+                                                руб</strong>
+                                        </div>
+                                        <a href="#">
+                                            <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
+                                        </a>
+                                        <button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center"
+                                                type="button"
+                                                style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;">
+                                            <i class="fas fa-heart"
+                                               style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить
+                                            из избранного
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item" style="background: transparent;">
+                                <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start"
+                                     style="padding: 0px;"><a href="#">
+                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186"
+                                                  height="114"></picture>
+                                </a>
+                                    <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
+                                        <div class="d-xxl-flex justify-content-between">
+                                            <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Вторые блюда</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Индия</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Рис</p>
+                                                    </a></li>
+                                                <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center"
+                                                    style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;">
+                                                    <a href="#">
+                                                        <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center"
+                                                           style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">
+                                                            Курица</p>
+                                                    </a></li>
+                                            </ul>
+                                            <strong class="d-xxl-flex"
+                                                    style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200
+                                                руб</strong>
+                                        </div>
+                                        <a href="#">
+                                            <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
+                                        </a>
+                                        <button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center"
+                                                type="button"
+                                                style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;">
+                                            <i class="fas fa-heart"
+                                               style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить
+                                            из избранного
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col">
-                    <ul class="list-group">
-                        <li class="list-group-item" style="background: transparent;">
-                            <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start" style="padding: 0px;"><a href="#">
-                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186" height="114"></picture>
-                                </a>
-                                <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
-                                    <div class="d-xxl-flex justify-content-between">
-                                        <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Вторые блюда</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Индия</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Рис</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Курица</p>
-                                                </a></li>
-                                        </ul><strong class="d-xxl-flex" style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200 руб</strong>
-                                    </div><a href="#">
-                                        <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
-                                    </a><button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center" type="button" style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;"><i class="fas fa-heart" style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить из избранного</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item" style="background: transparent;">
-                            <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start" style="padding: 0px;"><a href="#">
-                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186" height="114"></picture>
-                                </a>
-                                <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
-                                    <div class="d-xxl-flex justify-content-between">
-                                        <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Вторые блюда</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Индия</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Рис</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Курица</p>
-                                                </a></li>
-                                        </ul><strong class="d-xxl-flex" style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200 руб</strong>
-                                    </div><a href="#">
-                                        <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
-                                    </a><button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center" type="button" style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;"><i class="fas fa-heart" style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить из избранного</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item" style="background: transparent;">
-                            <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start" style="padding: 0px;"><a href="#">
-                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186" height="114"></picture>
-                                </a>
-                                <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
-                                    <div class="d-xxl-flex justify-content-between">
-                                        <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Вторые блюда</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Индия</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Рис</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Курица</p>
-                                                </a></li>
-                                        </ul><strong class="d-xxl-flex" style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200 руб</strong>
-                                    </div><a href="#">
-                                        <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
-                                    </a><button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center" type="button" style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;"><i class="fas fa-heart" style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить из избранного</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item" style="background: transparent;">
-                            <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start" style="padding: 0px;"><a href="#">
-                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186" height="114"></picture>
-                                </a>
-                                <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
-                                    <div class="d-xxl-flex justify-content-between">
-                                        <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Вторые блюда</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Индия</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Рис</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Курица</p>
-                                                </a></li>
-                                        </ul><strong class="d-xxl-flex" style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200 руб</strong>
-                                    </div><a href="#">
-                                        <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
-                                    </a><button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center" type="button" style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;"><i class="fas fa-heart" style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить из избранного</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item" style="background: transparent;">
-                            <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start" style="padding: 0px;"><a href="#">
-                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186" height="114"></picture>
-                                </a>
-                                <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
-                                    <div class="d-xxl-flex justify-content-between">
-                                        <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Вторые блюда</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Индия</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Рис</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Курица</p>
-                                                </a></li>
-                                        </ul><strong class="d-xxl-flex" style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200 руб</strong>
-                                    </div><a href="#">
-                                        <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
-                                    </a><button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center" type="button" style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;"><i class="fas fa-heart" style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить из избранного</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item" style="background: transparent;">
-                            <div class="d-inline-flex d-xxl-flex flex-row justify-content-xxl-start" style="padding: 0px;"><a href="#">
-                                    <picture><img class="rounded" src="{% static 'img/86.jpg' %}" width="186" height="114"></picture>
-                                </a>
-                                <div style="margin-right: 0px;padding: 0px;padding-right: 0px;padding-left: 0px;margin-left: 28px;">
-                                    <div class="d-xxl-flex justify-content-between">
-                                        <ul class="list-group list-group-horizontal d-inline-flex d-xxl-flex justify-content-center justify-content-xxl-start align-items-xxl-center">
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Вторые блюда</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Индия</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Рис</p>
-                                                </a></li>
-                                            <li class="list-group-item text-start d-inline-flex flex-row justify-content-center align-items-center align-content-center justify-content-xxl-center align-items-xxl-center" style="background: transparent;padding: 0px 0px;min-height: initial;min-width: initial;border-style: none;margin: 0px;margin-right: 5px;margin-left: 5px;"><a href="#">
-                                                    <p class="d-inline-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center" style="margin: 0px 0px 0px 0px;color: var(--bs-green);font-weight: bold;">Курица</p>
-                                                </a></li>
-                                        </ul><strong class="d-xxl-flex" style="padding-top: 0px;padding-right: 0px;padding-left: 0px;">200 руб</strong>
-                                    </div><a href="#">
-                                        <h3 style="margin-left: 1px;color: rgb(45,45,45);">Курица Карри с рисом</h3>
-                                    </a><button class="btn btn-primary d-inline-flex d-xxl-flex justify-content-xxl-center align-items-xxl-center" type="button" style="padding: 5px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;padding-top: 10px;font-size: 14px;text-align: center;"><i class="fas fa-heart" style="color: red;padding: 0px;font-size: 24px;padding-right: 10px;"></i>Удалить из избранного</button>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
-            </div>
-        </div>
-    </section>
-    {% endif %}
+                </section>
+            {% else %}
+                <section class="py-5">
+                    <div class="container">
+                        <br><br><br><br><br><br><br><br><br>
+                        <h3>Чтобы добавлять рецепты в избранное, сначала пройдите регистрацию или выполните вход!</h3>
+
+                        <br><br><br><br><br><br><br><br> 
+                    </div>
+                </section>
+            {% endif %}
 {% endblock %}

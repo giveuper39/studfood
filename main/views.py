@@ -24,10 +24,12 @@ def generator(request: HttpRequest) -> HttpResponse:
 def login(request: HttpRequest) -> HttpResponse:
     if request.method == "GET":
         reg_form = RegisterForm()
-        return render(request, "main/login.html", {"reg_form": reg_form})
+        log_form = LoginForm()
+        return render(request, "main/login.html", {"reg_form": reg_form, "log_form": log_form})
     if request.method == "POST":
         reg_form = RegisterForm(request.POST)
         print(reg_form.is_valid())
+        print(reg_form.errors)
         if reg_form.is_valid():
             user = reg_form.save(commit=False)
             user.email = user.email.lower()
@@ -37,7 +39,8 @@ def login(request: HttpRequest) -> HttpResponse:
                 print("YAHOO")
             return redirect("index")
     reg_form = RegisterForm()
-    return render(request, "main/login.html", {"reg_form": reg_form})
+    log_form = LoginForm()
+    return render(request, "main/login.html", {"reg_form": reg_form, "log_form": log_form})
 
 
 def favourite(request: HttpRequest) -> HttpResponse:
