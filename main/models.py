@@ -19,7 +19,10 @@ class FoodType(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=80)
-    price = models.IntegerField(max_length=4)
+    price = models.IntegerField()
+
+    def __str__(self):
+        return self.name
 
 
 class Recipe(models.Model):
@@ -31,14 +34,18 @@ class Recipe(models.Model):
     cooking_time = models.CharField(max_length=8)
     cost = models.IntegerField()
 
+    def __str__(self):
+        return self.name
+
 
 class ProductMiddle(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
-    product = models.ForeignKey(Recipe, on_delete=models.CASCADE)
-    
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    number = models.FloatField(max_length=5)
+    units = models.CharField(max_length=15)
 
-    def __str__(self):
-        return self.name
+    class Meta:
+        unique_together = ("product", "recipe")
 
 
 class User(AbstractUser):

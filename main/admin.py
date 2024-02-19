@@ -1,10 +1,15 @@
 from django.contrib import admin
-from main.models import Recipe, User, Tag, FoodType, Product
+from main.models import Recipe, User, Tag, FoodType, Product, ProductMiddle
+
+
+class ProductMiddleInline(admin.TabularInline):
+    model = ProductMiddle
 
 
 @admin.register(Recipe)
 class RecipeAdmin(admin.ModelAdmin):
     list_display = ["name"]
+    inlines = [ProductMiddleInline]
 
 
 @admin.register(User)
@@ -25,3 +30,5 @@ class FoodTypeAdmin(admin.ModelAdmin):
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ["name", "price"]
+
+
