@@ -5,23 +5,23 @@ from django.contrib.auth import login, authenticate, logout
 from .forms import LoginForm, RegisterForm
 
 
-def index(request: HttpRequest) -> HttpResponse:
+def home_view(request: HttpRequest) -> HttpResponse:
     return render(request, "main/index.html")
 
 
-def about(request: HttpRequest) -> HttpResponse:
+def about_view(request: HttpRequest) -> HttpResponse:
     return render(request, "main/about.html")
 
 
-def recipes(request: HttpRequest) -> HttpResponse:
+def catalogue_view(request: HttpRequest) -> HttpResponse:
     return render(request, "main/recipes.html")
 
 
-def generator(request: HttpRequest) -> HttpResponse:
+def generator_view(request: HttpRequest) -> HttpResponse:
     return render(request, "main/generator.html")
 
 
-def login(request: HttpRequest) -> HttpResponse:
+def login_view(request: HttpRequest) -> HttpResponse:
     if request.method == "GET":
         reg_form = RegisterForm()
         log_form = LoginForm()
@@ -34,18 +34,21 @@ def login(request: HttpRequest) -> HttpResponse:
             user = reg_form.save(commit=False)
             user.email = user.email.lower()
             user.save()
-            login(request=request, user=user)
+            login_view(request=request, user=user)
             if user.is_authenticated:
                 print("YAHOO")
-            return redirect("index")
+            return redirect("home")
     reg_form = RegisterForm()
     log_form = LoginForm()
     return render(request, "main/login.html", {"reg_form": reg_form, "log_form": log_form})
 
 
-def favourite(request: HttpRequest) -> HttpResponse:
-    return render(request, "main/favourite.html", {"user": request.user})
+def favourites_view(request: HttpRequest) -> HttpResponse:
+    return render(request, "main/favourite.html")
 
 
-def profile(request: HttpRequest) -> HttpResponse:
+def profile_view(request: HttpRequest) -> HttpResponse:
     return render(request, "main/profile.html")
+
+def recipe_view(request: HttpRequest) -> HttpResponse:
+    return render()

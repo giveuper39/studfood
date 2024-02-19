@@ -1,5 +1,5 @@
 from django.contrib import admin
-from main.models import Recipe, User, Category
+from main.models import Recipe, User, Tag, FoodType, Product
 
 
 @admin.register(Recipe)
@@ -12,7 +12,16 @@ class UserAdmin(admin.ModelAdmin):
     list_display = ["email"]
 
 
-
-@admin.register(Category)
+@admin.register(Tag)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ["name"]
+
+
+@admin.register(FoodType)
+class FoodTypeAdmin(admin.ModelAdmin):
+    list_display = ["name"]
+
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ["name", "price"]

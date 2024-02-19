@@ -17,20 +17,20 @@
 <body style="border-style: none;background: transparent;">
 <nav class="navbar navbar-expand-md sticky-top navbar-shrink py-3 navbar-light" id="mainNav"
      style="background: transparent;position: relative;opacity: 1;backdrop-filter: opacity(0) brightness(0%) contrast(0%);--bs-body-bg: var(--bs-navbar-toggler-border-color);border-style: none;overflow: visible;display: block;">
-    <div class="container"><a class="navbar-brand d-flex align-items-center" href="{% url 'index' %}"><span
+    <div class="container"><a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}"><span
             style="font-family: Dancing Script;font-size: 40px;">StudFood</span></a>
         <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
                 class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse d-xxl-flex" id="navcol-1">
             <ul class="navbar-nav mx-auto">
-                {% url 'index' as url %}
+                {% url 'home' as url %}
                 <li class="nav-item"><a class="nav-link {% if request.path == url %} active {% endif %}"
-                                        href="{% url 'index' %}"
+                                        href="{% url 'home' %}"
                                         style="font-family: 'Open Sans';">На
                     главную</a></li>
-                {% url 'recipes' as url %}
+                {% url 'catalogue' as url %}
                 <li class="nav-item"><a class="nav-link {% if request.path == url %} active {% endif %}"
-                                        href="{% url 'recipes' %}"
+                                        href="{% url 'catalogue' %}"
                                         style="font-family: 'Open Sans';">Рецепты</a></li>
                 {% url 'generator' as url %}
                 <li class="nav-item"><a class="nav-link {% if request.path == url %} active {% endif %}"
