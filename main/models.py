@@ -10,6 +10,13 @@ class Tag(models.Model):
         return self.name
 
 
+class Unit(models.Model):
+    name = models.CharField(max_length=15, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
 class FoodType(models.Model):
     name = models.CharField(max_length=50, unique=True, primary_key=True)
 
@@ -42,7 +49,7 @@ class ProductMiddle(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     number = models.FloatField(max_length=5)
-    units = models.CharField(max_length=15)
+    units = models.ForeignKey(Unit, on_delete=models.CASCADE, default="шт")
 
     class Meta:
         unique_together = ("product", "recipe")

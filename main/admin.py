@@ -1,5 +1,5 @@
 from django.contrib import admin
-from main.models import Recipe, User, Tag, FoodType, Product, ProductMiddle
+from main.models import Recipe, User, Tag, FoodType, Product, ProductMiddle, Unit
 
 
 class ProductMiddleInline(admin.TabularInline):
@@ -31,4 +31,6 @@ class FoodTypeAdmin(admin.ModelAdmin):
 class ProductAdmin(admin.ModelAdmin):
     list_display = ["name", "price"]
 
-
+@admin.register(Unit)
+class UnitAdmin(admin.ModelAdmin):
+    list_display = ["name"]
