@@ -1,7 +1,7 @@
 from django import forms
 from django.forms.widgets import TextInput, PasswordInput, EmailInput
 from django.contrib.auth.forms import UserCreationForm
-from .models import User
+from main.models import User
 
 
 class LoginForm(forms.Form):

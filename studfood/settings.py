@@ -13,6 +13,7 @@ from pathlib import Path
 import os
 from dotenv import dotenv_values
 
+
 config = {
     **dotenv_values(".env.example"),  # load shared development variables
     **dotenv_values(".env"),  # load sensitive variables

@@ -2,22 +2,31 @@ from django.shortcuts import render, redirect
 
 from django.http import HttpResponse, HttpRequest
 from django.contrib.auth import login, authenticate, logout
-from .forms import LoginForm, RegisterForm
+from main.forms import LoginForm, RegisterForm
+from main.models import User
 
 
 def home_view(request: HttpRequest) -> HttpResponse:
+    if not request.user.is_authenticated:
+        login(request, User.get_test_user())
     return render(request, "main/index.html")
 
 
 def about_view(request: HttpRequest) -> HttpResponse:
+    if not request.user.is_authenticated:
+        login(request, User.get_test_user())
     return render(request, "main/about.html")
 
 
 def catalogue_view(request: HttpRequest) -> HttpResponse:
+    if not request.user.is_authenticated:
+        login(request, User.get_test_user())
     return render(request, "main/recipes.html")
 
 
 def generator_view(request: HttpRequest) -> HttpResponse:
+    if not request.user.is_authenticated:
+        login(request, User.get_test_user())
     return render(request, "main/generator.html")
 
 
@@ -34,21 +43,32 @@ def login_view(request: HttpRequest) -> HttpResponse:
             user = reg_form.save(commit=False)
             user.email = user.email.lower()
             user.save()
-            login_view(request=request, user=user)
+            login(request, user)
             if user.is_authenticated:
                 print("YAHOO")
             return redirect("home")
+        # TODO: доделать логин форму
     reg_form = RegisterForm()
     log_form = LoginForm()
     return render(request, "main/login.html", {"reg_form": reg_form, "log_form": log_form})
 
 
 def favourites_view(request: HttpRequest) -> HttpResponse:
-    return render(request, "main/favourite.html")
+    if not request.user.is_authenticated:
+        login(request, User.get_test_user())
+    user: User = request.user
+    favs = user.favourites.all()
+    return render(request, "main/favourite.html", {"favs": favs})
 
 
 def profile_view(request: HttpRequest) -> HttpResponse:
     return render(request, "main/profile.html")
 
+
 def recipe_view(request: HttpRequest) -> HttpResponse:
     return render()
+
+
+def logout_view(request: HttpRequest) -> HttpResponse:
+    logout(request)
+    return redirect("home")
