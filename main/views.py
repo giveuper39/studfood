@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 from django.http import HttpResponse, HttpRequest
 from django.contrib.auth import login, authenticate, logout
-from main.forms import LoginForm, RegisterForm
+from main.forms import LoginForm, RegisterForm, GeneratorForm
 from main.models import User
 
 
@@ -27,7 +27,16 @@ def catalogue_view(request: HttpRequest) -> HttpResponse:
 def generator_view(request: HttpRequest) -> HttpResponse:
     if not request.user.is_authenticated:
         login(request, User.get_test_user())
-    return render(request, "main/generator.html")
+
+    if request.method == "GET":
+        gen_form = GeneratorForm()
+
+    elif request.method == "POST":
+        gen_form = GeneratorForm(request.POST)
+        print(gen_form.is_valid())
+        
+
+    return render(request, "main/generator.html", {"gen_form": gen_form})
 
 
 def login_view(request: HttpRequest) -> HttpResponse:
@@ -62,6 +71,8 @@ def favourites_view(request: HttpRequest) -> HttpResponse:
 
 
 def profile_view(request: HttpRequest) -> HttpResponse:
+    if not request.user.is_authenticated:
+        login(request, User.get_test_user())
     return render(request, "main/profile.html")
 
 
