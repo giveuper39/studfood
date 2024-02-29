@@ -40,30 +40,14 @@ class GeneratorForm(forms.Form):
             }
         )
     )
-    breakfast_check = forms.CharField(
-        widget=CheckboxInput(
-            attrs={
-                "type": "checkbox",
-                "name": "breakfast",
-                "class": "form-check-input",
-                "id": "formCheck-1",
-                "checked": "",
-            }
-        )
-    )
-    lunch_check = forms.CharField(
-        widget=CheckboxInput(
-            attrs={"type": "checkbox", "name": "lunch", "class": "form-check-input", "id": "formCheck-2", "checked": ""}
-        )
-    )
-    dinner_check = forms.CharField(
-        widget=CheckboxInput(
-            attrs={
-                "type": "checkbox",
-                "name": "dinner",
-                "class": "form-check-input",
-                "id": "formCheck-3",
-                "checked": "",
-            }
-        )
-    )
+    food_types = ("breakfast", "lunch", "dinner")
+    breakfast_check, lunch_check, dinner_check = (forms.CharField(
+            widget=CheckboxInput(
+                attrs={
+                    "type": "checkbox",
+                    "name": ft,
+                    "class": "form-check-input",
+                    "id": ft,
+                },
+            ), required=False
+        ) for _, ft in enumerate(food_types))

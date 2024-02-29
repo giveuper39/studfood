@@ -3,7 +3,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpRequest
 from django.contrib.auth import login, authenticate, logout
 from main.forms import LoginForm, RegisterForm, GeneratorForm
-from main.models import User
+from main.models import User, FoodType
+import random
 
 
 def home_view(request: HttpRequest) -> HttpResponse:
@@ -25,6 +26,7 @@ def catalogue_view(request: HttpRequest) -> HttpResponse:
 
 
 def generator_view(request: HttpRequest) -> HttpResponse:
+    menu = None
     if not request.user.is_authenticated:
         login(request, User.get_test_user())
 
@@ -32,11 +34,33 @@ def generator_view(request: HttpRequest) -> HttpResponse:
         gen_form = GeneratorForm()
 
     elif request.method == "POST":
-        gen_form = GeneratorForm(request.POST)
-        print(gen_form.is_valid())
-        
 
-    return render(request, "main/generator.html", {"gen_form": gen_form})
+        gen_form = GeneratorForm(request.POST)
+        if gen_form.is_valid():
+            data = gen_form.cleaned_data
+            user: User = request.user
+            fav_list = list(user.favourites.all())
+            print(FoodType.objects.all()[0].name)
+            food_types = gen_form.food_types
+            checks = tuple((True if data[f"{ft}_check"] == u"True" else False) for ft in food_types)
+            print(checks)
+            days_num = int(data["days_num"])
+            random.shuffle(fav_list)
+            menu_list = tuple(
+                (
+                    (
+                        list(filter(lambda x: x.food_type.name == FoodType.objects.all()[ind].name, fav_list))[
+                            : 1 + days_num // 6
+                        ]
+                    )
+                    if check
+                    else []
+                )
+                for (ind, check) in enumerate(checks)
+            )
+            print(menu_list)
+
+    return render(request, "main/generator.html", {"gen_form": gen_form, "menu": menu if menu else None})
 
 
 def login_view(request: HttpRequest) -> HttpResponse:
