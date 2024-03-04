@@ -45,13 +45,11 @@ def generator_view(request: HttpRequest) -> HttpResponse:
             print(checks)
             days_num = int(data["days_num"])
             random.shuffle(fav_list)
-            menu = tuple(
+            menu_list = tuple(
                 (
                     (
                         list(
-                            filter(
-                                lambda x: set(x.food_types.all()) & {FoodType.objects.all()[ind]} != set(), fav_list
-                            )
+                            filter(lambda x: set(x.food_types.all()) & {FoodType.objects.all()[ind]} != set(), fav_list)
                         )[: 1 + days_num // 6]
                     )
                     if check
@@ -60,15 +58,15 @@ def generator_view(request: HttpRequest) -> HttpResponse:
                 for (ind, check) in enumerate(checks)
             )
             menu = [
-                list(menu[j][(i // 6) % len(menu[j])] for i in range(days_num)) if checks[j] else None for j in range(3)
+                list(menu_list[j][(i // 6) % len(menu_list[j])] for i in range(days_num)) if checks[j] else None
+                for j in range(3)
             ]
-            print(menu)
-            print(menu[0][0].name)
-            return render(
-                request,
-                "main/generator.html",
-                {"gen_form": gen_form, "menu": menu, "days": range(0, days_num)},
-            )
+            if menu:
+                return render(
+                    request,
+                    "main/generator.html",
+                    {"gen_form": gen_form, "menu": menu, "days": range(0, days_num)},
+                )
     gen_form = GeneratorForm()
     return render(request, "main/generator.html", {"gen_form": gen_form})
 
