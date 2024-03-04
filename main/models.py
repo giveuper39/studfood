@@ -45,13 +45,13 @@ class Product(models.Model):
 class Recipe(models.Model):
     name = models.CharField(max_length=80)
     description = models.TextField(max_length=2000)
-    food_type = models.ForeignKey(FoodType, on_delete=models.CASCADE, default=FoodType.get_default)
+    food_types = models.ManyToManyField(FoodType, default=FoodType.get_default)
     tags = models.ManyToManyField(Tag)
     products = models.ManyToManyField(Product, through="ProductMiddle")
     cooking_time = models.CharField(max_length=8)
-    cost = models.IntegerField()
+    cost = models.PositiveIntegerField()
     photo = models.ImageField(upload_to="main_pics", default="86.jpg")
-
+    portions = models.PositiveIntegerField()
     def __str__(self):
         return self.name
 
@@ -79,7 +79,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     @classmethod
     def get_test_user(cls):
-        test_recipes = (Recipe.objects.get(name="TestFood1"), Recipe.objects.get(name="TestFood2"))
+        test_recipes = Recipe.objects.all()
         user, _ = cls.objects.get_or_create(email="qwertytest@gmail.com", password="12345678", )
         user.favourites.set(test_recipes)
         return user

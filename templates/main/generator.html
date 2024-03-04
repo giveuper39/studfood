@@ -1,5 +1,6 @@
 {% extends "main/base.html" %}
 {% load static %}
+{% load main_extras %}
 {% block title %} Генератор рациона {% endblock %}
 {% block content %}
     <section class="py-5">
@@ -21,7 +22,8 @@
                                         <label class="form-label"
                                                style="font-size: 19px;padding: 0px;margin-right: 10px;">Редактировать
                                             избранное</label>
-                                        <button class="btn btn-primary" type="button" onclick="window.location.href='{% url 'favourite' %}'"
+                                        <button class="btn btn-primary" type="button"
+                                                onclick="window.location.href='{% url 'favourite' %}'"
                                                 style="padding: 10px 10px;font-size: 15px;">Редактировать
                                         </button>
                                     </div>
@@ -30,159 +32,91 @@
                                                style="font-size: 19px;padding: 0px;margin-right: 10px;">Приемы
                                             пищи</label>
                                         <div>
-                                            <div class="form-check">{{ gen_form.breakfast_check }}<label class="form-check-label"
-                                                                                               for="breakfast"
-                                                                                               style="font-size: 17px;">Завтрак</label>
+                                            <div class="form-check">{{ gen_form.breakfast_check }}<label
+                                                    class="form-check-label"
+                                                    for="breakfast"
+                                                    style="font-size: 17px;">Завтрак</label>
                                             </div>
-                                            <div class="form-check">{{ gen_form.lunch_check }}<label class="form-check-label"
-                                                                                               for="lunch"
-                                                                                               style="font-size: 17px;">Обед</label>
+                                            <div class="form-check">{{ gen_form.lunch_check }}<label
+                                                    class="form-check-label"
+                                                    for="lunch"
+                                                    style="font-size: 17px;">Обед</label>
                                             </div>
-                                            <div class="form-check">{{ gen_form.dinner_check }}<label class="form-check-label"
-                                                                                                for="dinner"
-                                                                                                style="font-size: 17px;">Ужин</label>
+                                            <div class="form-check">{{ gen_form.dinner_check }}<label
+                                                    class="form-check-label"
+                                                    for="dinner"
+                                                    style="font-size: 17px;">Ужин</label>
                                             </div>
                                         </div>
                                     </div>
-                                    <input class="btn btn-primary" type="submit" style="background: #369f26;" value="Генерация">
+                                    <input class="btn btn-primary" type="submit" style="background: #369f26;"
+                                           value="Генерация">
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col">
-                    <ol class="list-group">
-                        <li class="list-group-item"
-                            style="background: transparent;border-width: 2px;border-style: solid;">
-                            <div>
-                                <h4>День 1</h4>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <div class="d-xxl-flex justify-content-xxl-start align-items-xxl-start">
-                                            <p style="margin-right: 10px;margin-bottom: 10px;">Завтрак</p><a href="#">
-                                            <p style="color: var(--bs-list-group-active-bg);font-weight: bold;">
-                                                Омлет</p>
-                                        </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-xxl-flex justify-content-xxl-start align-items-xxl-start">
-                                            <p style="margin-right: 10px;margin-bottom: 10px;">Обед</p><a href="#">
-                                            <p style="color: var(--bs-list-group-active-bg);font-weight: bold;">Борщ</p>
-                                        </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-xxl-flex justify-content-xxl-start align-items-xxl-start">
-                                            <p style="margin-right: 10px;margin-bottom: 10px;">Ужин</p><a href="#">
-                                            <p style="color: var(--bs-list-group-active-bg);font-weight: bold;">Курица
-                                                Карри с рисом</p>
-                                        </a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="list-group-item"
-                            style="background: transparent;border-width: 2px;border-style: solid;">
-                            <div>
-                                <h4>День 2</h4>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <div class="d-xxl-flex justify-content-xxl-start align-items-xxl-start">
-                                            <p style="margin-right: 10px;margin-bottom: 10px;">Завтрак</p><a href="#">
-                                            <p style="color: var(--bs-list-group-active-bg);font-weight: bold;">
-                                                Омлет</p>
-                                        </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-xxl-flex justify-content-xxl-start align-items-xxl-start">
-                                            <p style="margin-right: 10px;margin-bottom: 10px;">Обед</p><a href="#">
-                                            <p style="color: var(--bs-list-group-active-bg);font-weight: bold;">Борщ</p>
-                                        </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-xxl-flex justify-content-xxl-start align-items-xxl-start">
-                                            <p style="margin-right: 10px;margin-bottom: 10px;">Ужин</p><a href="#">
-                                            <p style="color: var(--bs-list-group-active-bg);font-weight: bold;">Курица
-                                                Карри с рисом</p>
-                                        </a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="list-group-item"
-                            style="background: transparent;border-width: 2px;border-style: solid;">
-                            <div>
-                                <h4>День 3</h4>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <div class="d-xxl-flex justify-content-xxl-start align-items-xxl-start">
-                                            <p style="margin-right: 10px;margin-bottom: 10px;">Завтрак</p><a href="#">
-                                            <p style="color: var(--bs-list-group-active-bg);font-weight: bold;">
-                                                Омлет</p>
-                                        </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-xxl-flex justify-content-xxl-start align-items-xxl-start">
-                                            <p style="margin-right: 10px;margin-bottom: 10px;">Обед</p><a href="#">
-                                            <p style="color: var(--bs-list-group-active-bg);font-weight: bold;">Борщ</p>
-                                        </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-xxl-flex justify-content-xxl-start align-items-xxl-start">
-                                            <p style="margin-right: 10px;margin-bottom: 10px;">Ужин</p><a href="#">
-                                            <p style="color: var(--bs-list-group-active-bg);font-weight: bold;">Курица
-                                                Карри с рисом</p>
-                                        </a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="list-group-item"
-                            style="background: transparent;border-width: 2px;border-style: solid;">
-                            <div>
-                                <h4>День 4</h4>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <div class="d-xxl-flex justify-content-xxl-start align-items-xxl-start">
-                                            <p style="margin-right: 10px;margin-bottom: 10px;">Завтрак</p><a href="#">
-                                            <p style="color: var(--bs-list-group-active-bg);font-weight: bold;">
-                                                Омлет</p>
-                                        </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-xxl-flex justify-content-xxl-start align-items-xxl-start">
-                                            <p style="margin-right: 10px;margin-bottom: 10px;">Обед</p><a href="#">
-                                            <p style="color: var(--bs-list-group-active-bg);font-weight: bold;">Борщ</p>
-                                        </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-xxl-flex justify-content-xxl-start align-items-xxl-start">
-                                            <p style="margin-right: 10px;margin-bottom: 10px;">Ужин</p><a href="#">
-                                            <p style="color: var(--bs-list-group-active-bg);font-weight: bold;">Курица
-                                                Карри с рисом</p>
-                                        </a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ol>
-                    <div class="d-xxl-flex justify-content-between" style="padding: 15px;"><a
-                            class="d-xxl-flex justify-content-xxl-start" href="#"
-                            style="color: var(--bs-primary-text-emphasis);text-decoration: underline;">Cписок
-                        покупок</a><a class="d-xxl-flex justify-content-xxl-end" href="#"
-                                      style="color: var(--bs-primary-text-emphasis);text-decoration: underline;">Экспорт
-                        в Excel</a></div>
+                    {% if menu %}
+                        <ol class="list-group">
+                            {% for day in days %}
+                                <li class="list-group-item"
+                                    style="background: transparent;border-width: 2px;border-style: solid;">
+                                    <div>
+                                        <h4>День {{ day | add:"1" }}</h4>
+                                        <ul class="list-unstyled">
+                                            {% if menu.0 %}
+                                                <li>
+                                                    <div class="d-xxl-flex justify-content-xxl-start align-items-xxl-start">
+                                                        <p style="margin-right: 10px;margin-bottom: 10px;"> Завтрак </p>
+                                                        <a href="#"><p
+                                                                style="color: var(--bs-list-group-active-bg);font-weight: bold;">
+                                                            {% with food=menu.0|index:day %}
+                                                                {{ food.name }} {% endwith %}</p>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                            {% endif %}
+                                            {% if menu.1 %}
+                                                <li>
+                                                    <div class="d-xxl-flex justify-content-xxl-start align-items-xxl-start">
+                                                        <p style="margin-right: 10px;margin-bottom: 10px;"> Обед </p><a
+                                                            href="#"><p
+                                                            style="color: var(--bs-list-group-active-bg);font-weight: bold;">
+                                                        {% with food=menu.1|index:day %}
+                                                            {{ food.name }} {% endwith %}</p>
+                                                    </a>
+                                                    </div>
+                                                </li>
+                                            {% endif %}
+                                            {% if menu.2 %}
+                                                <li>
+                                                    <div class="d-xxl-flex justify-content-xxl-start align-items-xxl-start">
+                                                        <p style="margin-right: 10px;margin-bottom: 10px;"> Ужин </p><a
+                                                            href="#"><p
+                                                            style="color: var(--bs-list-group-active-bg);font-weight: bold;">
+                                                        {% with food=menu.2|index:day %}
+                                                            {{ food.name }} {% endwith %}</p>
+                                                    </a>
+                                                    </div>
+                                                </li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ol>
+                        <div class="d-xxl-flex justify-content-between" style="padding: 15px;"><a
+                                class="d-xxl-flex justify-content-xxl-start" href="#"
+                                style="color: var(--bs-primary-text-emphasis);text-decoration: underline;">Cписок
+                            покупок</a><a class="d-xxl-flex justify-content-xxl-end" href="#"
+                                          style="color: var(--bs-primary-text-emphasis);text-decoration: underline;">Экспорт
+                            в Excel</a>
+                        </div>
+                    {% else %}
+                        <h3>Чтобы сгенерировать рацион, вы должны выбрать количество дней и приемы пищи и нажать на
+                            кнопку!</h3>
+                    {% endif %}
                 </div>
             </div>
         </div>

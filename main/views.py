@@ -32,9 +32,8 @@ def generator_view(request: HttpRequest) -> HttpResponse:
 
     if request.method == "GET":
         gen_form = GeneratorForm()
-
+        return render(request, "main/generator.html", {"gen_form": gen_form})
     elif request.method == "POST":
-
         gen_form = GeneratorForm(request.POST)
         if gen_form.is_valid():
             data = gen_form.cleaned_data
@@ -42,25 +41,36 @@ def generator_view(request: HttpRequest) -> HttpResponse:
             fav_list = list(user.favourites.all())
             print(FoodType.objects.all()[0].name)
             food_types = gen_form.food_types
-            checks = tuple((True if data[f"{ft}_check"] == u"True" else False) for ft in food_types)
+            checks = tuple((True if data[f"{ft}_check"] == "True" else False) for ft in food_types)
             print(checks)
             days_num = int(data["days_num"])
             random.shuffle(fav_list)
-            menu_list = tuple(
+            menu = tuple(
                 (
                     (
-                        list(filter(lambda x: x.food_type.name == FoodType.objects.all()[ind].name, fav_list))[
-                            : 1 + days_num // 6
-                        ]
+                        list(
+                            filter(
+                                lambda x: set(x.food_types.all()) & {FoodType.objects.all()[ind]} != set(), fav_list
+                            )
+                        )[: 1 + days_num // 6]
                     )
                     if check
                     else []
                 )
                 for (ind, check) in enumerate(checks)
             )
-            print(menu_list)
-
-    return render(request, "main/generator.html", {"gen_form": gen_form, "menu": menu if menu else None})
+            menu = [
+                list(menu[j][(i // 6) % len(menu[j])] for i in range(days_num)) if checks[j] else None for j in range(3)
+            ]
+            print(menu)
+            print(menu[0][0].name)
+            return render(
+                request,
+                "main/generator.html",
+                {"gen_form": gen_form, "menu": menu, "days": range(0, days_num)},
+            )
+    gen_form = GeneratorForm()
+    return render(request, "main/generator.html", {"gen_form": gen_form})
 
 
 def login_view(request: HttpRequest) -> HttpResponse:
