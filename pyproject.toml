@@ -27,7 +27,13 @@ build-backend = "poetry.core.masonry.api"
 [tool.ruff]
 line-length = 120
 select = ["ALL"]
+ignore = ["D101", "RUF012", "ANN101", "ERA001", "PGH", "D1", "PTH118", "ANN", "FIX"]
+exclude = ["main/migrations", "manage.py"]
 
 [tool.black]
 line-length = 120
 include = '\.pyi?$'
+
+[tool.mypy]
+exclude = ["main/migrations"]
+disable_error_code = ["import-untyped"]
